@@ -5,14 +5,11 @@
         static void Main(string[] args)
         {
             float a, b, m;
-            string date = null;
             bool authorizationIsPassed, result;
 
-            Console.WriteLine("Выберите действие. 1 - выбор большего значения");
-            Console.WriteLine("2 - перевод метров в сантиметры");
-            Console.WriteLine("3 - существует дата или нет");
-            Console.WriteLine("4 - Метод авторизации, на входе логин и пароль пользователя, на выходе bool значение;");
-            Console.WriteLine("5 - Метод регистрации, на входе логин, пароль, почта, дата рождения, на выходе bool");
+            Console.WriteLine("Выберите действие.\n1 - Выбор большего значения;\n2 - Конвертация метров в сантиметры;" +
+                "\n3 - Дата существует?\n4 - Метод авторизации, на входе логин и пароль пользователя, на выходе bool значение;" +
+                "\n5 - Метод регистрации, на входе логин, пароль, почта, дата рождения, на выходе bool.\n");
             string choice = Console.ReadLine();
 
             switch (choice)
@@ -32,7 +29,7 @@
 
                 case "3":
                     Console.WriteLine("введите дату для проверки:");
-                    date = Console.ReadLine();
+                    string date = Console.ReadLine();
                     bool isDate = Methods.Datetime(date);
                     if (isDate is true)
                         Console.WriteLine("Это дата");
@@ -67,7 +64,6 @@
                                 else { Console.WriteLine("Ошибка регистрации"); }
                     break;
             }
-
             Console.ReadKey();
         }
 

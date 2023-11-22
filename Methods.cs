@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Data.Sqlite;
+﻿using Microsoft.Data.Sqlite;
 
 namespace FourLab
 {
@@ -41,7 +36,6 @@ namespace FourLab
             sqliteConn.Open(); //открытие соединения
             SqliteCommand command = new() //инициализация экземпляра SqliteCommand
             {
-                //command.CommandText = "INSERT INTO Users (Name, Age) VALUES ('Tom', 36)";
                 Connection = sqliteConn, //соединение для выполнения запроса
                 CommandText = $"INSERT INTO Users (login, pwd, email, birthday) VALUES ('{username}', '{pwd}', '{email}', '{birthday}')"
             };
@@ -58,7 +52,6 @@ namespace FourLab
             sqliteConn.Open(); //открытие соединения
             SqliteCommand command = new() //инициализация экземпляра SqliteCommand
             {
-                //command.CommandText = "INSERT INTO Users (Name, Age) VALUES ('Tom', 36)";
                 Connection = sqliteConn, //соединение для выполнения запроса
                 CommandText = $"SELECT * FROM Users WHERE login = '{username}' AND pwd = '{pwd}'"
             };
